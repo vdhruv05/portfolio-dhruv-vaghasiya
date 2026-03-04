@@ -1,538 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vaghasiya Dhruvkumar — Cybersecurity Student</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,800&display=swap" rel="stylesheet"/>
-  <style>
-    :root {
-      --bg: #0e1422;
-      --card: #192139;
-      --text: #e6eef6;
-      --muted: #8fa2bc;
-      --accent: #48c1d9;
-      --shadow: 0 4px 22px rgba(72,193,217,0.13);
-      --radius: 16px;
-      --grad1: linear-gradient(90deg, #48c1d9 10%, #017091 90%);
-    }
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: "Poppins", system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
+  <meta charset="UTF-8">
+  <title>Dhruv Vaghasiya | Cybersecurity Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* HEADER */
-    header {
-      background: rgba(20,24,31, 0.90);
-      min-height: 48vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow);
-      border-radius: 0 0 var(--radius) var(--radius);
-      position: relative;
-      overflow: hidden;
-    }
-    .header-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background: radial-gradient(circle at 60% 25%,rgba(72,193,217,0.16) 0%,transparent 80%), radial-gradient(circle at 12% 70%,rgba(27,65,160,0.15) 0%,transparent 75%);
-      pointer-events: none;
-    }
-    .header-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      z-index: 1;
-      padding: 40px 40px 40px 50px;
-      gap: 30px;
-    }
-    .identity {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .logo {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: 0.07em;
-      margin-bottom: 7px;
-      text-shadow: 0 2px 18px var(--accent);
-    }
-    .tagline {
-      color: var(--muted);
-      font-size: 1.18rem;
-      font-weight: 600;
-      margin-bottom: 7px;
-    }
-    .headline {
-      font-size: 1.38rem;
-      color: #e6eef6;
-      margin-bottom: 1.2em;
-      font-weight: 600;
-      max-width: 400px;
-      opacity: 0.94;
-    }
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 0.8em;
-      font-size: 1.06rem;
-    }
-    .header-nav a {
-      color: var(--text);
-      background: rgba(72,193,217,0.08);
-      padding: 10px 24px;
-      border-radius: 100vw;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      transition: 0.23s;
-      margin: 0 3px;
-      letter-spacing: 0.05em;
-      border: 2px solid transparent;
-    }
-    .header-nav a:hover, .header-nav a.active {
-      background: var(--grad1);
-      color: #0e1422;
-      border: 2px solid #33b8dc;
-      box-shadow: 0 4px 14px #48c1d950;
-    }
-    .avatar {
-      flex-shrink: 0;
-      width: 112px;
-      height: 112px;
-      border-radius: 50%;
-      background: linear-gradient(135deg,#48c1d9 35%,#18334d 120%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 36px #48c1d955;
-      margin-left: 40px;
-      border: 4px solid #203562;
-    }
-    .avatar img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 4px solid #2ba9dd;
-      object-fit: cover;
-    }
-
-    /* SKILLS */
-    #skills {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 55px 16px 40px 16px;
-    }
-    .skills-title {
-      text-align: center;
-      color: var(--accent);
-      font-size: 2rem;
-      margin-bottom: 38px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-shadow: 0 4px 28px #01709140;
-    }
-    .skills-circles {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 58px;
-    }
-    .skill-circle {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 134px;
-      margin-bottom: 24px;
-    }
-    .circle-wrap {
-      position: relative;
-      width: 98px;
-      height: 98px;
-      background: #101a2b;
-      border-radius: 50%;
-      margin-bottom: 18px;
-      box-shadow: 0 1px 20px #48c1d930;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .circle-text {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 1.25rem;
-      pointer-events: none;
-      z-index: 1;
-      text-shadow: 0 1px 10px #48c1d955;
-    }
-    .circle-bg {
-      stroke: #213944;
-      stroke-width: 7;
-      fill: none;
-    }
-    .circle-bar {
-      stroke: url(#grad1);
-      stroke-width: 7;
-      fill: none;
-      stroke-linecap: round;
-      filter: drop-shadow(0px 1px 6px #48c1d990);
-      transition: stroke-dashoffset 1.7s cubic-bezier(.23,1.24,.53,0.97);
-    }
-    .skill-label {
-      margin-top: 1px;
-      font-size: 1.08rem;
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-align: center;
-      text-shadow: 0 2px 18px #48c1d930;
-    }
-
-    /* PROJECTS CREATIVE */
-    #projects {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 55px 16px 40px 16px;
-    }
-    .projects-title {
-      text-align: center;
-      color: var(--accent);
-      font-size: 2rem;
-      margin-bottom: 32px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 4px 18px #01709135;
-    }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(254px,1fr));
-      gap: 28px;
-      margin-top: 26px;
-    }
-    .project {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 26px 21px 18px 21px;
-      box-shadow: 0 4px 30px rgba(72,193,217,0.11);
-      position: relative;
-      transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.3s;
-      overflow: hidden;
-    }
-    .project:hover {
-      transform: scale(1.045) translateY(-8px);
-      box-shadow: 0 8px 32px rgba(72,193,217,0.29);
-      background: linear-gradient(120deg,#1f2f46 55%, var(--card) 100%);
-    }
-    .project:before {
-      content: '';
-      display: block;
-      position: absolute;
-      left: -10px; top: -10px;
-      width: 65px; height: 65px;
-      border-radius: 50%;
-      background: var(--accent);
-      filter: blur(16px);
-      opacity: 0.17;
-      pointer-events: none;
-      z-index: 0;
-      transition: opacity 0.3s;
-    }
-    .project h3 {
-      color: var(--accent);
-      font-size: 1.28rem;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 12px #48c1d950;
-      font-weight: 700;
-    }
-    .project p {
-      color: var(--muted);
-      font-size: 0.97rem;
-      line-height: 1.5;
-      position: relative;
-      z-index: 2;
-    }
-    .project-icon {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      display: inline-block;
-      filter: drop-shadow(0 2px 10px #35a3b970);
-      transition: filter 0.32s;
-    }
-    .project:hover .project-icon {
-      filter: drop-shadow(0 4px 20px #48c1d990);
-    }
-
-    /* CONTACT UNIQUE */
-    #contact {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 55px 16px 40px 16px;
-      text-align: center;
-      position: relative;
-    }
-    .contact-title {
-      color: var(--accent);
-      font-size: 2rem;
-      margin-bottom: 23px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 4px 18px #01709135;
-    }
-    .contact-box {
-      margin-top: 8px;
-      background: rgba(24,35,54, 0.85);
-      backdrop-filter: blur(13px);
-      border-radius: var(--radius);
-      padding: 52px 22px 36px 22px;
-      box-shadow: 0 0 40px rgba(72,193,217,0.16), 0 0 88px #35a3b960;
-      position: relative;
-      overflow: hidden;
-    }
-    .sparkle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.25;
-      animation: sparkleMove 2s infinite alternate;
-      pointer-events: none;
-    }
-    @keyframes sparkleMove {
-      0%{ transform: translateY(0);}
-      100%{ transform: translateY(18px);}
-    }
-    .contact-box p {
-      font-size: 1.03rem;
-      color: var(--text);
-      margin-bottom: 21px;
-      font-weight: 600;
-    }
-    .contact-links {
-      margin-top: 16px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 22px;
-    }
-    .contact-btn {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      background: var(--grad1);
-      color: var(--bg);
-      padding: 11px 20px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 18px rgba(72,193,217,0.14);
-      transition: background 0.3s, transform 0.23s;
-      font-size: 1rem;
-      position: relative;
-      border: none;
-      cursor: pointer;
-    }
-    .contact-btn:hover {
-      background: linear-gradient(90deg,#35a3b9 0%,#48c1d9 100%);
-      transform: scale(1.07);
-      box-shadow: 0 7px 21px #48c1d950;
-    }
-    .emoji {
-      font-size: 1.34em;
-      transition: filter 0.23s;
-    }
-    .contact-btn:hover .emoji {
-      filter: drop-shadow(0 2px 10px #48c1d990);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.93rem;
-      color: var(--muted);
-      padding: 32px 12px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      margin-top: 28px;
-      background: rgba(24,35,54,0.07);
-    }
-
-    @media (max-width: 900px) {
-      .header-content {
-        flex-direction: column;
-        gap: 0;
-        padding: 48px 10px 18px 10px;
-        align-items: flex-start;
-      }
-      .avatar {
-        margin-left: 0;
-        margin-top: 23px;
-        align-self: center;
-      }
-    }
-    @media (max-width:600px) {
-      header { min-height: 52vh;}
-      .header-content { padding: 32px 10px 10px 10px;}
-      .logo { font-size: 2.06rem;}
-      .skills-circles { gap: 30px;}
-      .skill-circle { width: 96px;}
-      #contact { padding: 36px 6px 32px 6px;}
-    }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <header>
-    <div class="header-bg"></div>
-    <div class="header-content">
-      <div class="identity">
-        <div class="logo">Dhruv Vaghasiya</div>
-        <div class="tagline">Cybersecurity Student</div>
-        <div class="headline">
-          Exploring secure code, building digital defense, and creating tech solutions for tomorrow.
-        </div>
-        <nav class="header-nav">
-          <a href="#skills" class="active">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-      <div class="avatar">
-        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Dhruv" alt="Avatar"/>
-      </div>
-    </div>
+    <h1>Dhruv Vaghasiya</h1>
+    <p>Cybersecurity Student & Developer</p>
   </header>
 
-  <section id="skills">
-    <div class="skills-title">Skills</div>
-    <div class="skills-circles">
-      <div class="skill-circle">
-        <div class="circle-wrap">
-          <svg width="98" height="98"><defs>
-            <linearGradient id="grad1" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="3%" stop-color="#48c1d9" /><stop offset="97%" stop-color="#017091" />
-            </linearGradient>
-            </defs>
-            <circle class="circle-bg" cx="49" cy="49" r="40"/>
-            <circle class="circle-bar" data-pct="80" cx="49" cy="49" r="40" />
-          </svg>
-          <div class="circle-text">80%</div>
-        </div>
-        <div class="skill-label">HTML & CSS</div>
-      </div>
-      <div class="skill-circle">
-        <div class="circle-wrap">
-          <svg width="98" height="98">
-            <circle class="circle-bg" cx="49" cy="49" r="40"/>
-            <circle class="circle-bar" data-pct="70" cx="49" cy="49" r="40" />
-          </svg>
-          <div class="circle-text">70%</div>
-        </div>
-        <div class="skill-label">JavaScript</div>
-      </div>
-      <div class="skill-circle">
-        <div class="circle-wrap">
-          <svg width="98" height="98">
-            <circle class="circle-bg" cx="49" cy="49" r="40"/>
-            <circle class="circle-bar" data-pct="100" cx="49" cy="49" r="40" />
-          </svg>
-          <div class="circle-text">100%</div>
-        </div>
-        <div class="skill-label">Python</div>
-      </div>
-      <div class="skill-circle">
-        <div class="circle-wrap">
-          <svg width="98" height="98">
-            <circle class="circle-bg" cx="49" cy="49" r="40"/>
-            <circle class="circle-bar" data-pct="95" cx="49" cy="49" r="40" />
-          </svg>
-          <div class="circle-text">95%</div>
-        </div>
-        <div class="skill-label">Problem Solving</div>
-      </div>
-      <div class="skill-circle">
-        <div class="circle-wrap">
-          <svg width="98" height="98">
-            <circle class="circle-bg" cx="49" cy="49" r="40"/>
-            <circle class="circle-bar" data-pct="90" cx="49" cy="49" r="40" />
-          </svg>
-          <div class="circle-text">90%</div>
-        </div>
-        <div class="skill-label">Java</div>
-      </div>
-    </div>
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Passionate cybersecurity student focused on building secure systems,
+      analyzing threats, and developing defensive solutions.
+    </p>
   </section>
 
-  <section id="projects">
-    <div class="projects-title">Projects</div>
-    <div class="projects-grid">
-      <div class="project">
-        <span class="project-icon">🔐</span>
-        <h3>Password Strength Analyzer</h3>
-        <p>A Python-based tool that evaluates password security using entropy analysis and suggests stronger alternatives.</p>
-      </div>
-      <div class="project">
-        <span class="project-icon">🧠</span>
-        <h3>Phishing Detection Website</h3>
-        <p>Developed a web app that detects phishing URLs using HTML parsing and basic machine learning classification.</p>
-      </div>
-      <div class="project">
-        <span class="project-icon">🕵</span>
-        <h3>Network Packet Sniffer</h3>
-        <p>Built a command-line network monitor in Python using socket programming to capture and analyze live packets.</p>
-      </div>
-      <div class="project">
-        <span class="project-icon">🌐</span>
-        <h3>Portfolio Website</h3>
-        <p>Created a personal responsive portfolio using HTML, CSS, and GitHub Pages to showcase my projects and skills.</p>
-      </div>
-    </div>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>Java</li>
+      <li>Problem Solving</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <div class="contact-title">Contact Me</div>
-    <div class="contact-box">
-      <div class="sparkle" style="left:18px;top:15px;width:22px;height:22px;background:var(--accent);"></div>
-      <div class="sparkle" style="right:24px;top:23px;width:16px;height:16px;background:#e6eef6;"></div>
-      <div class="sparkle" style="left:42px;bottom:16px;width:8px;height:8px;background:#35a3b9;"></div>
-      <p>💬 Let’s connect! Whether you want to collaborate, ask a question, or just say hi — I’d love to hear from you.</p>
-      <div class="contact-links">
-        <a href="mailto:dhruvvaghasiya2005312@gmail.com" class="contact-btn"><span class="emoji">📧</span>Email</a>
-        <a href="https://www.linkedin.com/in/dhruv-vaghasiya-a64494384" target="_blank" class="contact-btn"><span class="emoji">💼</span>LinkedIn</a>
-        <a href="https://www.instagram.com/vdhruv_05" target="_blank" class="contact-btn"><span class="emoji">📸</span>Instagram</a>
-      </div>
-    </div>
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li>Password Strength Analyzer</li>
+      <li>Phishing Detection Website</li>
+      <li>Network Packet Sniffer</li>
+      <li>Portfolio Website</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Current UTC Time</h2>
+    <p id="currentTime"></p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: dhruvvaghasiya2005312@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/dhruv-vaghasiya-a64494384" target="_blank">Profile</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Vaghasiya Dhruvkumar Jagdishbhai. All rights reserved.</p>
-    <p>Built with ❤ using HTML, CSS, and GitHub Pages.</p>
+    <p>© 2026 Dhruv Vaghasiya | Built with ❤️</p>
   </footer>
 
-  <script>
-    // Radial skill bar animation
-    document.querySelectorAll('.circle-bar').forEach(function(bar) {
-      let pct = +bar.getAttribute('data-pct');
-      let r = 40;
-      let circ = 2 * Math.PI * r;
-      bar.style.strokeDasharray = circ;
-      bar.style.strokeDashoffset = circ;
-      setTimeout(function() {
-        bar.style.strokeDashoffset = circ * (1 - pct/100);
-      }, 500);
-    });
-  </script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
 </body>
 </html>
